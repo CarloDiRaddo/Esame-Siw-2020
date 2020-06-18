@@ -1,0 +1,60 @@
+Casi d'Uso dello User :
+
+-SignUp: 
+Un nuovo Utente vuole registrarsi al Sistema. L'utente seleziona l'operazione "SignUp".Il sistema mostra una form in cui immettere i dati: L'utente poi inserisce il proprio Username(che è univoco),password, nome e cognome.Il sistema effettua la registrazione.
+Ora l'utente è registrato al sistema.
+
+-Autenticazione:
+Un Utente vuole autenticarsi nel sistema. L'utente seleziona l'operazione "SignIn". Il sistema mostra una form in cui immettere i dati. L'utente poi inserisce il proprio Username e la propria password. Il sistema autentica l'utente. Ora l'utente può usare il sistema.
+
+-Visualizzazione del profilo Utente:
+Un utente loggato al Sistema vuole visualizzare il proprio profilo. L'utente seleziona la voce "Profilo". Il sistema mostra i dati dell'utente quali Username,nome,cognome.
+
+-Aggiornamento del profilo Utente:
+Un utente loggato al Sistema vuole modificare il proprio profilo. L'utente, dopo aver visualizzato il proprio profilo, seleziona la voce "Modifica Campi". Il sistema mostra una form in cui inserire i nuovi dati Utente, quali nome cognome e password. Dopo aver inserito tutti i campi l'Utente conferma l'operazione. Il Sistema registra i nuovi dati dell'Utente.
+----------------------------------------------------------------------
+Casi d'Uso del Project:
+
+-Creazione di un nuovo Progetto:
+Un utente loggato al Sistema vuole creare un nuovo Progetto. L'utente seleziona la voce "Crea un nuovo Progetto". Il sistema restituisce una form in cui inserire i dati del nuovo Progetto, quali Nome e Descrizione del Progetto. L'utente conferma l'operazione di inserimento. Il sistema, a meno di duplicati, registra le informazioni del nuovo Progetto.
+
+-Visualizzazione dei progetti dello User:
+Un utente loggato al Sistema vuole visualizzare i progetti di cui è proprietario. L'utente seleziona la voce "I miei Progetti". Il sistema mostra i progetti di cui l'Utente è proprietario. 
+
+-Visualizzare i progetti condivisi con lo User:
+Un utente loggato al Sistema vuole visualizzare i progetti condivisi da altri Utenti con lui. L'utente  seleziona la voce "Progetti condivisi con me". Il sistema mostra i progetti condivisi con l'utente loggato, in particolare il loro nome e la loro descrizione. 
+
+-Aggiornamento dei dati del progetto dello User:
+Un utente loggato al Sistema vuole aggiornare i dati di un progetto di cui è proprietario. Dopo aver visualizzato i propri progetti, l'utente seleziona la voce "Modifica" affianco al progetto di cui vuole modificare i dati. Il sistema mostra una form in cui immettere i nuovi dati, quali nome e descrizione del progetto. L'utente inserisce i nuovi dati e conferma l'operazione. Il sistema registra i dati aggiornati del progetto in questione.
+
+-Cancellazione di un progetto dello User: 
+Un utente loggato al Sistema vuole cancellare un suo progetto. L'utente, dopo aver visualizzato i propri progetti, seleziona la voce "Elimina" affianco al progetto che vuole eliminare. Il sistema elimina definitivamente il progetto dello User.
+
+-Condivisione di un progetto dello User con un altro User:
+Un utente loggato al Sistema vuole condividere un progetto di cui è proprietario con un altro utente registrato al Sistema. L'utente, dopo aver visualizzato i suoi progetti, ne seleziona uno. Il sistema mostra tutti i dati del progetto in questione quali nome, descrizione, gli username degli utenti con i quali è stato condiviso, i task associati al progetto e i tag di esso. L'utente seleziona la voce "Share with". Il sistema mostra una form in cui inserire lo username di un utente registrato al sistema. L'utente dopo aver compilato la form, conferma l'operazione. Il sistema registra la condivisione con l'utente inserito.
+
+-Aggiunta di un Tag al progetto (estensione)
+Un utente loggato al sistema vuole aggiungere un nuovo tag ad un progetto che sta visualizzando. L'utente seleziona la voce "Aggiungi nuovo Tag". Il sistema mostra una form in cui inserire i dati del nuovo tag, quali nome colore e descrizione. Dopo aver compilato la form, l'utente conferma l'operazione. Il sistema registra i dati del nuovo tag associato al progetto in questione.
+----------------------------------------------------------------------
+Casi d'uso del Task:
+
+-Aggiunta di un nuovo task ad un progetto:
+Un utente loggato al sistema vuole aggiungere un nuovo task ad un progetto che sta visualizzando e di cui è proprietario. L'utente seleziona la voce "Aggiungi Task". Il sistema mostra una form in cui inserire i dati del nuovo task, quali nome e descrizione. Dopo aver compilato la form, l'utente conferma l'operazione. Il sistema registra i dati del nuovo Task associato al progetto.
+
+-Aggiornamento del task di un progetto:
+Un utente loggato al sistema vuole aggiornare i dati di un task di un progetto che sta visualizzando e di cui è proprietario o ne ha la visibilità. L'utente seleziona la voce "Modifica" accanto al task che vuole modificare. Il sistema mostra una form in cui inserire i nuovi dati del task, quali nome e descrizione. L'utente, dopo aver compilato la form, conferma l'operazione. Il sistema registra i dati aggiornati del task relativo al progetto in questione.
+
+-Cancellare un Task di un progetto:
+Un utente loggato al sistema vuole cancellare un task di un progetto che sta visualizzando di cui è proprietario. L'utente seleziona la voce elimina situata sotto il task interessato. Il sistema elimina il Task definitivamente.
+
+-Assegnazione di un Task di un progetto ad un utente che ne ha visibilità:
+Un utente loggato al sistema vuole assegnare un task ad un altro utente che ha visibilità del progetto. L'utente loggato seleziona il task interessato e successivamente la voce "assegna ad un utente". Il sistema restituisce i membri del progetto. L'utente loggato seleziona uno dei membri. Il sistema assegna il task al membro selezionato.
+
+-Aggiunta un tag ad un task di un progetto(estensione):
+Un utente loggato al sistema vuole aggiungere un tag di un progetto di cui è proprietario ad un task di esso che sta visualizzando. L'utente seleziona la voce "aggiungi Tag". Il sistema mostra l'elenco dei tag del progetto in questione con la loro descrizione e colore. L'utente ne seleziona uno. Il sistema associa il tag al task in questione 
+
+-Aggiunta di un commento ad un task di un progetto(estensione):
+Un utente loggato vuole aggiungere un commento ad un task di un progetto di cui è proprietario o ne ha visibilità. L'utente seleziona la voce "Aggiungi commento". Il sistema mostra una form in cui inserire il testo del commento. L'utente conferma l'operazione. Il sistema registra il commento relativo al Task in questione.
+
+
+
