@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Task</title>
+</head>
+<body>
+
+<h1><b> Aggiungi nuovo Task </b></h1>
+<form th:action="'/aggiungiTask/' + ${project.id}" method="POST">
+<div>Nome:</div>
+<input type="text" th:field ="${task.nome}" placeholder="NOME" required>
+<div>Descrizione :</div>
+<input type="text" th:field ="${task.descrizione}" placeholder="DESCRIZIONE">
+<p><button type="submit">Invia</button></p>
+</form>
+<footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>

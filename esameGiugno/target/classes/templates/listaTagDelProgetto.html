@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Tag del Progetto</title>
+</head>
+<body>
+      
+	<h3>Tag del Progetto</h3>
+	<ul>
+		<li th:each="tag : ${project.listaTag}">
+			<div><a th:href="'/' + ${project.id} + '/assegnaTag/' + ${taskId} + '/' + ${tag.id}" ><b th:text="${tag.nome}"></b></a></div>
+			<div th:text="${tag.descrizione}"></div>
+			<div th:text="${tag.colore}"></div>
+		</li>
+	</ul>
+
+	<footer th:replace="fragments/base.html :: fondo"></footer>
+	
+</body>
+</html>

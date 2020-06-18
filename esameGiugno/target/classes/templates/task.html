@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Task</title>
+</head>
+<body> 
+	<h1 th:text="${task.nome}"></h1>
+	<h4 th:text="${task.descrizione}"></h4>
+	
+	<h3>Tag</h3>
+	<ul>
+		<li th:each="tag : ${task.listaTag}">
+			<div> <b th:text="${tag.nome}"></b></div>
+			<div th:text="${tag.descrizione}"></div>
+		</li>
+	</ul>
+	
+	<div th:if="${loggedUser} == ${proprietario}"><a th:href="@{'/' + ${projectId} +'/assegnaTag/' + ${task.id}}">Aggiungi Tag</a></div>
+	<footer th:replace="fragments/base.html :: fondo"></footer>
+	
+	<h3>Task assegnato a :</h3>
+	<div th:if="${task.utenteAssegnato} != null" th:text="${task.utenteAssegnato.nome} + ' ' + ${task.utenteAssegnato.cognome}"></div>
+	<div th:if="${loggedUser} == ${proprietario}" th:unless="${task.utenteAssegnato} != null"><a th:href="@{'/' + ${projectId} + '/assegnaTask/' + ${task.id}}">Assegna ad un utente</a></div> 
+	
+	<h3>Lista Commenti</h3>
+	<ul>
+		<li th:each="testoCommento : ${listaCommenti}">
+			<div><b th:text="${testoCommento}"></b></div>
+			<div th:text ="'scritto da: ' + ${testoCommento.proprietarioCommento.nome} + ' ' +  ${testoCommento.proprietarioCommento.cognome}"></div>
+		</li>
+	</ul>
+</body>
+</html>

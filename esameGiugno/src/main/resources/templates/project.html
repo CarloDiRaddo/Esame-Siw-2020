@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Progetto</title>
+</head>
+<body>
+      
+	<h1 th:text="${project.nome}"></h1>
+	<h4 th:text="${project.descrizione}"></h4>
+	<div th:if="${members.size() > 0}">
+		<h3>Condiviso con</h3>
+		<ul>
+			<li th:each="member:${members}">
+				<div th:text="${member.nome} + ' ' + ${member.cognome}"></div>
+			</li>
+		</ul>
+	</div>
+	
+	<div th:if="${loggedUser} == ${proprietario}"><a th:href = "'/projects/' + ${project.id} + '/shareWith'">Share with</a></div>
+	
+	<h3>Tasks</h3>
+	<ul>
+		<li th:each="task : ${project.tasks}">
+			<div><a th:href="@{'/projects/' + ${project.id} + '/task/' + ${task.id}}" th:text="${task.nome}">...</a></div>
+			<div th:text="${task.descrizione}"></div>
+			<div><a th:href="'/projects/' + ${project.id} + '/task/' + ${task.id} + '/modifica'">Modifica</a></div>
+			<div><a th:href="'/projects/' + ${project.id} + '/task/' + ${task.id} + '/commento'">Aggiungi Commento</a></div>
+			<div th:if="${loggedUser} == ${proprietario}"><a th:href="@{'/projects/' + ${project.id} +'/task/' + ${task.id} + '/delete'}" th:text="Elimina">cancella Task</a></div>
+		</li>
+	</ul>
+	<div th:if="${loggedUser} == ${proprietario}"><a th:href="@{'/aggiungiTask/' + ${project.id}}">Aggiungi Task</a></div>
+	
+	<h3>Tag</h3>
+	<ul>
+		<li th:each="tag : ${project.listaTag}">
+			<div> <b th:text="${tag.nome}"></b></div>
+			<div th:text="${tag.descrizione}"></div>
+		</li>
+	</ul>
+	<a th:href="@{'/formTag/' + ${project.id}}">Aggiungi nuovo Tag</a>
+	<footer th:replace="fragments/base.html :: fondo"></footer>
+	
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Sign Up</title>
+</head>
+
+<body>
+<h1>Register new User</h1>
+<form id = "registrazioneUtenteForm"
+      th:action="@{/users/signup}"
+      method="POST">
+
+    <table>
+        <tr>
+            <td><label for="userNameInput">Username</label>
+            <td><input id=userNameInput type="text" th:field="${credentialsForm.userName}" placeholder="USERNAME" required/></td>
+            <td th:if="${#fields.hasErrors('credentialsForm.userName')}" th:errors="${credentialsForm.userName}" th:style="'color:red'"></td>
+        </tr>
+        <tr>
+            <td><label for="passwordInput">Password</label></td>
+            <td><input id="passwordInput" type="password" th:field="${credentialsForm.password}" placeholder="PASSWORD"/></td>
+            <td th:if="${#fields.hasErrors('credentialsForm.password')}" th:errors="${credentialsForm.password}" th:style="'color:red'"></td>
+        </tr>
+        <tr>
+            <td><label for="nomeInput">Nome</label></td>
+            <td><input id="nomeInput" type="text" th:field="${userForm.nome}" placeholder="NOME"/></td>
+            <td th:if="${#fields.hasErrors('userForm.nome')}" th:errors="${userForm.nome}" th:style="'color:red'"></td>
+        </tr>
+        <tr>
+            <td><label for="cognomeInput">Cognome</label></td>
+            <td><input id="cognomeInput" type="text" th:field="${userForm.cognome}" placeholder="COGNOME"/></td>
+            <td th:if="${#fields.hasErrors('userForm.cognome')}" th:errors="${userForm.cognome}" th:style="'color:red'"></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Register</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

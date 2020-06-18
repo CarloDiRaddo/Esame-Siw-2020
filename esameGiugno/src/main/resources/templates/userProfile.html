@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Profilo</title>
+</head>
+<body>
+<table>
+        <tr>
+            <td><b>Username: </b></td>
+            <td th:text="${credentials.userName}">...</td>
+        </tr>
+        <tr>
+            <td><b>Nome: </b></td>
+            <td th:text="${loggedUser.nome}">...</td>
+   
+        </tr>
+        <tr>
+     		
+            <td><b>Cognome: </b></td>
+            <td th:text="${loggedUser.cognome}">...</td>
+		
+        </tr>
+        <tr>
+            <td><b>Ruolo: </b></td>
+            <td th:text="${credentials.role}">...</td>
+        </tr>
+         <tr>
+           	<td><a href="/modificaCampi">Modifica Campi</a></td>
+        </tr>
+    </table>
+    <footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Membri del Progetto</title>
+</head>
+<body>
+      
+	<h3>Membri del Progetto</h3>
+	<ul>
+		<li th:each="member : ${members}">
+		<div>	
+		<a th:href="'/' + ${projectId} + '/assegnaTask/' + ${taskId} + '/' + ${member.id}" >
+		<b th:text="${member.nome} + ' ' + ${member.cognome}"></b></a>
+		</div>	
+		
+		</li>
+	</ul>
+
+	<footer th:replace="fragments/base.html :: fondo"></footer>
+	
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Tag</title>
+</head>
+<body>
+
+<h1><b> Aggiungi nuovo Tag </b></h1>
+<form th:action="'/formTag/' + ${project.id}" method="POST">
+<div>Nome:</div>
+<input type="text" th:field ="${tag.nome}" placeholder="NOME" required>
+<div>Colore :</div>
+<input type="text" th:field ="${tag.colore}" placeholder="COLORE" required>
+<div>Descrizione :</div>
+<input type="text" th:field ="${tag.descrizione}" placeholder="DESCRIZIONE">
+<p><button type="submit">Invia</button></p>
+</form>
+<footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>

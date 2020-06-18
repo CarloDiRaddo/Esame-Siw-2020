@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Profilo</title>
+</head>
+<body>
+<h1><b> Modifica Campi </b></h1>
+<form th:action="@{/modificaCampi}" method="POST">
+<div>Nuova Password :</div>
+<input type="password" th:field ="${credentialsForm.password}" placeholder="NUOVA PASS" required>
+<span th:if="${#fields.hasErrors('credentialsForm.password')}" th:errors="${credentialsForm.password}" th:style="'color:red'"></span>
+<div>Nuovo Nome :</div>
+<input type="text" th:field ="${user.nome}" placeholder="NUOVO NOME" required>
+<div>Nuovo Cognome :</div>
+<input type="text" th:field ="${user.cognome}" placeholder="NUOVO COGNOME" required>
+<p><button type="submit">Invia</button></p>
+
+</form>
+
+<footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>

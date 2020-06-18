@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+	
+<head>
+	<meta charset="UTF-8">
+	<title>I miei Progetti</title>
+</head>		
+<body>
+<h1>I miei Progetti</h1>
+<div>
+	<table>
+		<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Descrizione</th>
+		</tr>
+		</thead>
+		</tbody>
+		<tr th:each ="project : ${projectList}">
+		
+			<td><a th:href="'/projects/' + ${project.id}" th:text="${project.nome}">...</a></td>
+			<td th:text="${project.descrizione}">...</td>
+
+			<td><a th:href="'/projects/' + ${project.id} + '/modifica'">Modifica</a></td>
+			<td><a th:href="'/projects/' + ${project.id} + '/delete'" th:text="Elimina">cancella progetto</a></td>
+
+		</tr>
+		</tbody>
+	</table>
+</div>
+<footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>

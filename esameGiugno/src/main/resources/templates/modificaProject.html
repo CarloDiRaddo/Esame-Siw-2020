@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Modifica Progetto</title>
+</head>
+
+<body>
+<h1>Modifica Progetto</h1>
+
+<form
+      th:action="@{'/projects/' + ${project.id} + '/modifica'}"
+      method="POST">
+      
+     	<table>
+        <tr>
+            <td><label for="projectName">Project Name</label>
+            <td><input id=projectName type="text" th:field="${project.nome}" placeholder="NOME PROGETTO" required/></td>
+            <!--<td th:if="${#fields.hasErrors('modificaProjectForm.nome')}" th:errors="${modificaProjectForm.nome}" th:style="'color:red'"></td> --->
+        </tr>
+         <tr>
+            <td><label for="projectDescription">Descrizione</label></td>
+            <td><input id="projectDescription" type="text" th:field="${project.descrizione}" placeholder="DESCRIZIONE PROGETTO"/></td>
+            <!--<td th:if="${#fields.hasErrors('modificaProjectForm.descrizione')}" th:errors="${modificaProjectForm.descrizione}" th:style="'color:red'"></td>-->
+        </tr>
+        
+        </table>
+        <p><button type="submit">Modifica</button></p>
+        </form>
+        
+<footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>
+        
